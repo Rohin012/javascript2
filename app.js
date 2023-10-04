@@ -99,7 +99,8 @@ display = (data)=>{
 
 
         return (`<article class="menu-item"><div class="item-info"><img src= ${v.img} class="photo"></div><h4>${v.title}</h4>
-        <header> <h4>${v.category}</h4><h4 class="price">${v.price}</h4></header>
+        <header> <h4>${v.category}</h4><h4 class="price">${v.price}</h4></
+        header>
         <p class="item-text">${v.desc}</p></article>
         `)
     
