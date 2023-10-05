@@ -98,10 +98,18 @@ display = (data)=>{
     const displayHtml = data.map((v,index)=> {
 
 
-        return (`<article class="menu-item"><div class="item-info"><img src= ${v.img} class="photo"></div><h4>${v.title}</h4>
-        <header> <h4>${v.category}</h4><h4 class="price">${v.price}</h4></
-        header>
-        <p class="item-text">${v.desc}</p></article>
+        return (`<article class="menu-item">
+        <img src="${v.img}" alt="menu item" class="photo" />
+        <div class="item-info">
+          <header>
+            <h4>${v.title}</h4>
+            <h4 class="price">${v.price}</h4>
+          </header>
+          <p class="item-text">
+            ${v.desc}
+          </p>
+        </div>
+      </article>
         `)
     
     })
