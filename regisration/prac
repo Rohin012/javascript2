@@ -1,0 +1,15 @@
+fieldValue.forEach((v)=>{
+
+                
+                if(v.value == "checbox")
+                {
+                    obj[v.id]==v.cheched
+                }
+                else
+                {
+                    obj[v.id]==v.value
+                }
+                
+
+            })
+            console.log()

@@ -80,41 +80,82 @@ const menu = [
       desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     },
 ]
-function filterdata(id){
-    
+display = (data) => {
 
-    let filterData = menu.filter((v)=> {
-
-        return v.category===id ;
-    });
-
-
-
-    display(filterData);
-
+  const Display = data.map((v)=>{
+      return `<article class="menu-item">
+      <img src="${v.img}" alt="menu item" class="photo" />
+      <div class="item-info">
+        <header>
+          <h4>${v.category}</h4>
+          <h4 class="price">${v.price}</h4>
+        </header>
+        <p class="item-text">
+          ${v.desc}
+        </p>
+      </div>
+    </article>
+`
+  })
+  document.getElementById("menu").innerHTML = Display.join(' ');
 }
-display = (data)=>{
-
-    const displayHtml = data.map((v,index)=> {
-
-
-        return (`<article class="menu-item">
-        <img src="${v.img}" alt="menu item" class="photo" />
-        <div class="item-info">
-          <header>
-            <h4>${v.title}</h4>
-            <h4 class="price">${v.price}</h4>
-          </header>
-          <p class="item-text">
-            ${v.desc}
-          </p>
-        </div>
-      </article>
-        `)
-    
-    })
-
-    document.getElementById("menu").innerHTML = displayHtml.join(" ");
-}
-
 display(menu);
+
+displaybutton = ()=>{
+  let category = menu.map((v)=>{
+    
+    return v.category;
+
+  }).reduce((acc, curr)=>{
+
+    if(!acc.includes(curr)){
+      
+       acc.push(curr); 
+
+    }
+    return acc;
+  },[])
+
+  let button = category.map((p)=>{
+
+    return `<button type="button" class="filter-btn" data-id="all"onclick="FilterMenu('${p}')">${p}</button>`
+
+  })
+
+  document.getElementById('btn').innerHTML= button.join(" ");
+  
+  display(menu);
+}
+
+displaybutton();
+
+FilterMenu = (category) => {
+
+  const filterMenu = menu.filter((v)=>{
+
+    return v.category === category;
+
+  })
+  display(filterMenu);
+}
+Asc = () => {
+
+  const ascending = menu.sort((a,b)=>{
+
+    if(a.price>b.price){
+      return 1
+    }
+    else if(a.price== b.price){
+
+      if(a.id>b.id){
+        return 1
+      }else{
+        return -1
+      }
+    }
+      else{
+      return -1
+    }
+  })
+  display(ascending);
+}

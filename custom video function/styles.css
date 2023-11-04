@@ -1,0 +1,21 @@
+.container {
+    text-align: center;
+  }
+  
+  button {
+    background-color: #574caf;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #1f205d;
+  }
+  
+  input[type="range"] {
+    width: 48%;
+  }
+  
+  

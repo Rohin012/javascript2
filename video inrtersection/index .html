@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            #myvideo{
+                margin-top: 1500px;
+                margin-bottom: 1500px;
+            }
+
+    </style>
+</head>
+<body>
+    <video id="myvideo" controls loop width="50%">
+        <source src="./video/nature.mp4"type="video/mp4">
+    </video>
+    <script>
+        let option = {
+            root:null,
+            rootMargin:"0px",
+            threshold:1.0
+        };
+        let callback =(entries)=>{
+            entries.forEach(element => {
+                if(element.target.id == "myvideo")
+                {
+                    if(element.isIntersecting){
+                        element.target.play();
+                    }
+                    else{
+                        element.target.pause();
+                    }
+                }
+                
+            });
+        }
+        let observer = new IntersectionObserver(callback,option);
+        observer.observe(document.querySelector("#myvideo"));
+    </script>
+</body>
+</html>
