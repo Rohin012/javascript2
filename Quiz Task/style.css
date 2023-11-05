@@ -1,0 +1,35 @@
+.quiz_section{
+   
+    height: auto;
+    width: 500px;
+    padding: 45px;
+    box-shadow: 1px 2px 5px gray;
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+button{
+    padding: 10px 15px;
+    background-color: green;
+    border: none;
+    border-radius: 17px;
+    color: white;
+}
+li{
+    border: 1px solid gray;
+    list-style-type: none;
+    padding: 10px;
+    border-radius: 27px;
+    font-size: larger;
+    width: auto;
+    margin: 10px;
+}
+.btn{
+    justify-content: center;
+    display: flex;
+    margin: 20px;
+}
