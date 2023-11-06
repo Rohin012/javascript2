@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud operation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .update_form,.create_form{
+            display: none;
+        }
+    </style>
+</head>
+<body onload="readAll()">
+    <div class="container">
+        <div class="form_container">
+            <form class="create_form">
+                <input type="text"class="name">
+                <input type="email"class="email">
+                <input type="number"class="num"><br>
+                <button class="btn2" type="button" onclick="Add()">create</button>
+            </form>
+            <form class="update_form">
+                <input type="text" hidden class="id">
+                <input type="text"class="uname">
+                <input type="email"class="uemail">
+                <input type="number"class="unum"><br>
+                <button class="btn2" type="button"onclick="update()">update form</button>
+            </form>
+            <div class="add_div">
+                <button class="btn2" onclick="create()">
+                    Add +
+                </button>
+            </div>
+            <!-- <div class="add_div">
+                <button class="btn2" onclick="clear()">
+                    ClearItem
+                </button>
+            </div> -->
+            <table id="customers">
+                <thead>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>Number</th>
+                    <th>action</th>
+                    
+                </thead>
+                <tbody class="data_table">
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
