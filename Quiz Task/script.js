@@ -110,5 +110,10 @@ const questions= [
         }
         
     })
+const pre = ()=>{
+
+      currentQuiz = currentQuiz-1
+      loadQuiz();
+    }
 
   
